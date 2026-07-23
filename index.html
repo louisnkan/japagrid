@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JapaGrid — Relocation Intelligence for Nigerians</title>
+    <meta name="description" content="Structured, sourced, dated country profiles for Nigerians researching relocation. No listicles. No vibes. Just verified data.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --surface: #12121a;
+            --surface-2: #1a1a25;
+            --text: #f0f0f5;
+            --text-muted: #8a8a9a;
+            --accent: #00d4aa;
+            --accent-dim: #00d4aa20;
+            --border: #2a2a35;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --success: #22c55e;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: rgba(10,10,15,0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 0 1.5rem;
+        }
+        
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        
+        .logo {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-icon {
+            width: 32px; height: 32px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--bg);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover { color: var(--text); }
+        
+        .nav-cta {
+            background: var(--accent);
+            color: var(--bg) !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        
+        .hero {
+            padding: 140px 1.5rem 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent-dim);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--accent);
+        }
+        
+        .hero-badge::before {
+            content: '';
+            width: 8px; height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero h1 span {
+            color: var(--accent);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0,212,170,0.3);
+        }
+        
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1px solid var(--border);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background 0.2s;
+        }
+        
+        .btn-secondary:hover { background: var(--surface-2); }
+        
+        .trust-bar {
+            padding: 2rem 1.5rem;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .trust-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .trust-item strong {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+        
+        .trust-item span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .how-it-works {
+            padding: 80px 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .step {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -12px;
+            left: 2rem;
+            background: var(--accent);
+            color: var(--bg);
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        
+        .step h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .step p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .featured {
+            padding: 80px 1.5rem;
+            background: var(--surface);
+        }
+        
+        .featured-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .country-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .country-card { grid-template-columns: 1fr 1fr; }
+        }
+        
+        .country-visual {
+            background: linear-gradient(135deg, #1a1a25 0%, #0a0a0f 100%);
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .country-visual::before {
+            content: '';
+            position: absolute;
+            width: 200px; height: 200px;
+            background: var(--accent);
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .country-flag {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            z-index: 1;
+        }
+        
+        .country-visual h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            z-index: 1;
+        }
+        
+        .country-visual .tag {
+            background: var(--accent-dim);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.75rem;
+            z-index: 1;
+        }
+        
+        .country-details {
+            padding: 2.5rem;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .detail-row:last-child { border-bottom: none; }
+        
+        .detail-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        .detail-value {
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: right;
+        }
+        
+        .detail-value.positive { color: var(--success); }
+        .detail-value.warning { color: var(--warning); }
+        .detail-value.neutral { color: var(--text); }
+        
+        .country-cta {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .country-cta .btn-primary,
+        .country-cta .btn-secondary {
+            flex: 1;
+            justify-content: center;
+            padding: 0.875rem 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .promise {
+            padding: 80px 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .promise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .promise-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+        }
+        
+        .promise-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .promise-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .promise-item p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        .cta-section {
+            padding: 100px 1.5rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg) 0%, var(--surface) 100%);
+        }
+        
+        .cta-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+        
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 1.5rem 2rem;
+        }
+        
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-brand {
+            max-width: 300px;
+        }
+        
+        .footer-brand .logo {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-col h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-col a {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            transition: color 0.2s;
+        }
+        
+        .footer-col a:hover { color: var(--text); }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .footer-bottom p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+        
+        .studio-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+        
+        .studio-badge span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding-top: 100px; }
+            .trust-inner { gap: 1.5rem; }
+            .country-cta { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="logo">
+                <div class="logo-icon">JG</div>
+                JapaGrid
+            </a>
+            <div class="nav-links">
+                <a href="/germany.html">Countries</a>
+                <a href="#how">How it Works</a>
+                <a href="#about">About</a>
+                <a href="/germany.html" class="nav-cta">Explore Germany</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">Now Live — Germany Profile</div>
+        <h1>Relocation intel that <span>actually checks out</span></h1>
+        <p class="hero-subtitle">
+            Structured, sourced, dated country profiles for Nigerians researching relocation. 
+            No listicles. No vibes. Just verified data on visas, jobs, costs, and the catch no one tells you.
+        </p>
+        <div class="hero-cta-group">
+            <a href="/germany.html" class="btn-primary">
+                Explore Germany
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+            <a href="#how" class="btn-secondary">See how it works</a>
+        </div>
+    </section>
+
+    <div class="trust-bar">
+        <div class="trust-inner">
+            <div class="trust-item">
+                <strong>1</strong>
+                <span>Country Live</span>
+            </div>
+            <div class="trust-item">
+                <strong>12+</strong>
+                <span>Verified Sources</span>
+            </div>
+            <div class="trust-item">
+                <strong>July 2026</strong>
+                <span>Last Verified</span>
+            </div>
+            <div class="trust-item">
+                <strong>0</strong>
+                <span>Unverified Claims</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="how-it-works" id="how">
+        <div class="section-header">
+            <h2>How JapaGrid works</h2>
+            <p>Built for the 1am browser who needs facts, not fantasies</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Pick a country</h3>
+                <p>Every profile follows the same structure. Compare Germany to Canada the same way you'd compare two phones.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Read the reality</h3>
+                <p>Visa pathways, job market truth, cost vs. earnings, and the catch — every country has one. We say it upfront.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Check the sources</h3>
+                <p>Every claim links to an official government page. Every profile has a "last verified" date. No trust, just proof.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Make the call</h3>
+                <p>Armed with structured data, not scattered forum posts. Your move — but now you know what you're moving into.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="featured-inner">
+            <div class="section-header">
+                <h2>Featured: Germany</h2>
+                <p>The country profile that started it all — built from firsthand experience</p>
+            </div>
+            <div class="country-card">
+                <div class="country-visual">
+                    <div class="country-flag">🇩🇪</div>
+                    <h3>Germany</h3>
+                    <span class="tag">Best for: Skilled Professionals</span>
+                </div>
+                <div class="country-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Visa Pathways</span>
+                        <span class="detail-value positive">4+ Options</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Language Required</span>
+                        <span class="detail-value warning">B1 for most jobs</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Avg. Salary (Engineer)</span>
+                        <span class="detail-value neutral">€50k–€65k</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Degree Recognition</span>
+                        <span class="detail-value warning">Required, varies by state</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Time to PR</span>
+                        <span class="detail-value positive">4 years (skilled worker)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">The Catch</span>
+                        <span class="detail-value warning">High taxes, housing crisis</span>
+                    </div>
+                    <div class="country-cta">
+                        <a href="/germany.html" class="btn-primary">Full Profile</a>
+                        <a href="https://deutschready.xyz" target="_blank" class="btn-secondary">Prep for A1 ↗</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="promise">
+        <div class="section-header">
+            <h2>Our sourcing promise</h2>
+            <p>How we're different from every "Top 10 Countries to Japa" list you've already seen</p>
+        </div>
+        <div class="promise-grid">
+            <div class="promise-item">
+                <div class="promise-icon">🔗</div>
+                <h4>Official Sources Only</h4>
+                <p>German Federal Foreign Office, BAMF, Make-it-in-Germany — not forum rumors.</p>
+            </div>
+            <div class="promise-item">
+                <div class="promise-icon">📅</div>
+                <h4>Date-Stamped Everything</h4>
+                <p>Visa rules change. We show when each profile was last verified. No stale data.</p>
+            </div>
+            <div class="promise-item">
+                <div class="promise-icon">⚖️</div>
+                <h4>The Catch Included</h4>
+                <p>Every country has downsides. We put them in the same box as the benefits. No surprises.</p>
+            </div>
+            <div class="promise-item">
+                <div class="promise-icon">📊</div>
+                <h4>Same Schema, Every Time</h4>
+                <p>Compare Germany to Canada apples-to-apples. Same sections, same rigor.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Built by someone who's <span style="color: var(--accent);">actually doing it</span></h2>
+        <p>
+            I'm Louis — mechanical engineer, NYSC teacher, and someone prepping for grad school in Germany. 
+            JapaGrid is what I wish existed when I started researching at 1am.
+        </p>
+        <a href="/germany.html" class="btn-primary">
+            Start with Germany
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <div class="logo-icon">JG</div>
+                        JapaGrid
+                    </a>
+                    <p>Relocation intelligence for Nigerians. Structured, sourced, and honest. No listicles. No vibes. Just the data you need to make a life-altering decision.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Explore</h4>
+                        <a href="/germany.html">Germany</a>
+                        <a href="#">Canada (soon)</a>
+                        <a href="#">UK (soon)</a>
+                        <a href="#">Rwanda (soon)</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <a href="https://deutschready.xyz" target="_blank">DeutschReady</a>
+                        <a href="#">Sourcing Methodology</a>
+                        <a href="#">Policy Watch</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <a href="https://instagram.com/louis_nkan" target="_blank">Instagram</a>
+                        <a href="https://github.com/louisnkan" target="_blank">GitHub</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 JapaGrid. All data verified against official sources.</p>
+                <div class="studio-badge">
+                    <span>◆</span>
+                    A <span>Louis IV Studio</span> project
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

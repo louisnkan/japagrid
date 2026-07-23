@@ -6,21 +6,21 @@
     <title>Germany — JapaGrid Relocation Profile</title>
     <meta name="description" content="Complete relocation profile for Germany: visa pathways, job market reality, cost vs earnings, degree recognition, and the catch no one tells you. Verified July 2026.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0a0a0f;
-            --surface: #12121a;
-            --surface-2: #1a1a25;
-            --text: #f0f0f5;
-            --text-muted: #8a8a9a;
-            --accent: #00d4aa;
-            --accent-dim: #00d4aa20;
-            --border: #2a2a35;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --success: #22c55e;
-            --info: #3b82f6;
+            --bg: #141210;
+            --surface: #1e1c18;
+            --surface-2: #2a2722;
+            --text: #f5f0e8;
+            --text-muted: #9a9085;
+            --accent: #d4a017;
+            --accent-dim: rgba(212,160,23,0.12);
+            --border: #3a3530;
+            --warning: #c4841a;
+            --danger: #b84a3e;
+            --success: #6b9e5a;
+            --info: #5a8a9e;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -29,75 +29,59 @@
             font-family: 'Inter', -apple-system, sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.7;
+            line-height: 1.75;
             -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            letter-spacing: -0.01em;
         }
         
         nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            background: rgba(10,10,15,0.95);
-            backdrop-filter: blur(20px);
+            padding: 1.5rem;
             border-bottom: 1px solid var(--border);
-            z-index: 100;
-            padding: 0 1.5rem;
         }
         
         .nav-inner {
-            max-width: 900px;
+            max-width: 720px;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 60px;
         }
         
         .logo {
-            font-weight: 800;
-            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.3rem;
             color: var(--text);
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
         
-        .logo-icon {
-            width: 28px; height: 28px;
-            background: var(--accent);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            color: var(--bg);
-        }
+        .logo span { color: var(--accent); }
         
         .back-link {
             color: var(--text-muted);
             text-decoration: none;
             font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
             transition: color 0.2s;
         }
         
         .back-link:hover { color: var(--text); }
         
         .country-header {
-            padding: 100px 1.5rem 2rem;
-            max-width: 900px;
+            max-width: 720px;
             margin: 0 auto;
+            padding: 3rem 1.5rem 2rem;
         }
         
         .breadcrumb {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-            margin-bottom: 1.5rem;
             font-size: 0.8rem;
             color: var(--text-muted);
+            margin-bottom: 1.5rem;
         }
         
         .breadcrumb a {
@@ -109,133 +93,89 @@
         
         .country-title {
             display: flex;
-            align-items: center;
-            gap: 1rem;
+            align-items: baseline;
+            gap: 0.75rem;
             margin-bottom: 1rem;
         }
         
         .country-title .flag {
-            font-size: 3rem;
+            font-size: 2.5rem;
         }
         
         .country-title h1 {
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-size: clamp(2rem, 5vw, 2.8rem);
             font-weight: 800;
-            letter-spacing: -0.02em;
         }
         
         .country-hook {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-muted);
-            max-width: 600px;
-            line-height: 1.6;
+            line-height: 1.75;
             margin-bottom: 1.5rem;
+            max-width: 600px;
+        }
+        
+        .country-hook strong {
+            color: var(--text);
+            font-weight: 600;
         }
         
         .meta-bar {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             flex-wrap: wrap;
             align-items: center;
         }
         
+        .verified-badge {
+            background: var(--accent-dim);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border: 1px solid var(--accent);
+            letter-spacing: 0.03em;
+        }
+        
         .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
             font-size: 0.8rem;
             color: var(--text-muted);
         }
         
-        .meta-item .dot {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-        }
-        
-        .dot.verified { background: var(--success); }
-        .dot.warning { background: var(--warning); }
-        
-        .verified-badge {
-            background: var(--accent-dim);
-            color: var(--accent);
-            padding: 0.3rem 0.8rem;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            border: 1px solid var(--accent);
-        }
-        
-        .quick-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            max-width: 900px;
-            margin: 0 auto 2rem;
-            padding: 0 1.5rem;
-        }
-        
-        @media (min-width: 640px) {
-            .quick-stats { grid-template-columns: repeat(4, 1fr); }
-        }
-        
-        .stat-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.2rem;
-            text-align: center;
-        }
-        
-        .stat-card .stat-value {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--accent);
-            display: block;
-        }
-        
-        .stat-card .stat-label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-top: 0.25rem;
-        }
-        
         .content {
-            max-width: 900px;
+            max-width: 720px;
             margin: 0 auto;
             padding: 0 1.5rem 4rem;
         }
         
         .section {
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
         
-        .section-header-row {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .section-icon {
-            font-size: 1.3rem;
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
         }
         
         .section h2 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            flex: 1;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
         }
         
-        .section-count {
-            background: var(--surface-2);
+        .section-intro {
             color: var(--text-muted);
-            padding: 0.2rem 0.6rem;
-            border-radius: 100px;
-            font-size: 0.75rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-intro strong {
+            color: var(--text);
             font-weight: 600;
         }
         
@@ -245,16 +185,15 @@
         }
         
         .visa-card {
-            background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 14px;
+            border-radius: 6px;
             padding: 1.5rem;
+            background: var(--surface);
             position: relative;
         }
         
         .visa-card.recommended {
             border-color: var(--accent);
-            background: linear-gradient(135deg, var(--surface) 0%, var(--accent-dim) 100%);
         }
         
         .visa-badge {
@@ -263,23 +202,25 @@
             right: 1.5rem;
             background: var(--accent);
             color: var(--bg);
-            padding: 0.25rem 0.75rem;
-            border-radius: 0 0 8px 8px;
-            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 0 0 4px 4px;
+            font-size: 0.65rem;
             font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         
         .visa-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 1.15rem;
             margin-bottom: 0.5rem;
+            font-weight: 700;
             padding-right: 5rem;
         }
         
         .visa-card p {
             color: var(--text-muted);
             font-size: 0.9rem;
+            line-height: 1.65;
             margin-bottom: 1rem;
         }
         
@@ -292,7 +233,7 @@
         .visa-meta-item {
             display: flex;
             flex-direction: column;
-            gap: 0.15rem;
+            gap: 0.1rem;
         }
         
         .visa-meta-item .label {
@@ -307,63 +248,67 @@
             font-weight: 600;
         }
         
-        .job-highlights {
+        .job-list {
             display: grid;
-            gap: 1rem;
+            gap: 0.75rem;
         }
         
         .job-item {
-            background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.2rem 1.5rem;
+            border-radius: 6px;
+            padding: 1rem 1.25rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 0.5rem;
+            background: var(--surface);
         }
         
-        .job-item .job-name {
+        .job-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .job-status {
+            font-size: 0.8rem;
             font-weight: 600;
         }
         
-        .job-item .job-demand {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .job-status.high { color: var(--success); }
+        .job-status.medium { color: var(--warning); }
+        .job-status.low { color: var(--danger); }
+        
+        .reality-box {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 1rem;
+            background: var(--surface);
+        }
+        
+        .reality-box p {
             font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.7;
         }
         
-        .demand-bar {
-            width: 60px;
-            height: 6px;
-            background: var(--surface-2);
-            border-radius: 3px;
-            overflow: hidden;
+        .reality-box strong {
+            color: var(--warning);
         }
-        
-        .demand-fill {
-            height: 100%;
-            border-radius: 3px;
-        }
-        
-        .demand-fill.high { background: var(--success); width: 90%; }
-        .demand-fill.medium { background: var(--warning); width: 60%; }
-        .demand-fill.low { background: var(--danger); width: 30%; }
         
         .cost-table {
-            background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 14px;
+            border-radius: 6px;
             overflow: hidden;
+            background: var(--surface);
         }
         
         .cost-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 1.5rem;
+            padding: 0.875rem 1.25rem;
             border-bottom: 1px solid var(--border);
         }
         
@@ -377,42 +322,42 @@
             font-size: 0.9rem;
         }
         
-        .cost-value {
-            font-weight: 600;
-            text-align: right;
-        }
-        
         .cost-note {
             font-size: 0.75rem;
             color: var(--text-muted);
             display: block;
-            margin-top: 0.15rem;
+        }
+        
+        .cost-value {
+            font-weight: 600;
+            text-align: right;
+            font-size: 0.9rem;
         }
         
         .catch-box {
-            background: linear-gradient(135deg, #1a0a0a 0%, #2a1a1a 100%);
             border: 1px solid var(--danger);
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 6px;
+            padding: 2rem 1.5rem 1.5rem;
+            background: linear-gradient(135deg, #1a1210 0%, #241a18 100%);
             position: relative;
         }
         
-        .catch-box::before {
-            content: '⚠️ THE CATCH';
+        .catch-label {
             position: absolute;
-            top: -12px;
-            left: 2rem;
+            top: -10px;
+            left: 1.5rem;
             background: var(--danger);
             color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.65rem;
             font-weight: 700;
+            text-transform: uppercase;
             letter-spacing: 0.05em;
         }
         
         .catch-box h3 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
             color: var(--danger);
         }
@@ -420,7 +365,7 @@
         .catch-box ul {
             list-style: none;
             display: grid;
-            gap: 0.75rem;
+            gap: 0.875rem;
         }
         
         .catch-box li {
@@ -429,60 +374,74 @@
             align-items: flex-start;
             font-size: 0.9rem;
             color: var(--text-muted);
+            line-height: 1.65;
         }
         
         .catch-box li::before {
-            content: '→';
+            content: '—';
             color: var(--danger);
             font-weight: 700;
             flex-shrink: 0;
         }
         
+        .catch-box li strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+        
         .sources-list {
             display: grid;
-            gap: 0.75rem;
+            gap: 0.625rem;
         }
         
         .source-item {
-            background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 1rem 1.2rem;
+            border-radius: 6px;
+            padding: 1rem 1.25rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 0.5rem;
+            background: var(--surface);
+        }
+        
+        .source-name {
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+        
+        .source-right {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .source-type {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: var(--surface-2);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
         }
         
         .source-item a {
             color: var(--accent);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
         }
         
         .source-item a:hover { text-decoration: underline; }
         
-        .source-type {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            background: var(--surface-2);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-        }
-        
         .cta-box {
-            background: linear-gradient(135deg, var(--accent-dim) 0%, var(--surface) 100%);
             border: 1px solid var(--accent);
-            border-radius: 16px;
+            border-radius: 6px;
             padding: 2rem;
             text-align: center;
+            background: var(--accent-dim);
             margin-top: 3rem;
         }
         
@@ -495,21 +454,20 @@
             color: var(--text-muted);
             font-size: 0.9rem;
             margin-bottom: 1.5rem;
+            line-height: 1.65;
         }
         
         .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            display: inline-block;
             padding: 0.875rem 1.5rem;
-            border-radius: 10px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.9rem;
-            transition: transform 0.2s;
+            transition: opacity 0.2s;
         }
         
-        .btn:hover { transform: translateY(-2px); }
+        .btn:hover { opacity: 0.9; }
         
         .btn-primary {
             background: var(--accent);
@@ -520,203 +478,184 @@
             background: var(--surface-2);
             color: var(--text);
             border: 1px solid var(--border);
-            margin-left: 0.75rem;
+            margin-left: 0.5rem;
         }
         
         footer {
             border-top: 1px solid var(--border);
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem;
             text-align: center;
         }
         
         .footer-inner {
-            max-width: 900px;
+            max-width: 720px;
             margin: 0 auto;
         }
         
         .footer-brand {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-            text-decoration: none;
-            color: var(--text);
+            font-family: 'Playfair Display', serif;
             font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text);
+            text-decoration: none;
+            margin-bottom: 0.75rem;
+            display: inline-block;
         }
         
-        .footer-brand .logo-icon {
-            width: 24px; height: 24px;
-            font-size: 0.7rem;
-        }
+        .footer-brand span { color: var(--accent); }
         
         .footer-note {
             color: var(--text-muted);
             font-size: 0.8rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
         
-        .studio-badge {
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
             color: var(--text-muted);
-            font-size: 0.75rem;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: color 0.2s;
         }
         
-        .studio-badge span {
+        .footer-links a:hover { color: var(--text); }
+        
+        .studio-line {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+        
+        .studio-line span {
             color: var(--accent);
             font-weight: 600;
         }
         
         @media (max-width: 640px) {
-            .country-header { padding-top: 80px; }
+            .btn-secondary { margin-left: 0; margin-top: 0.5rem; display: block; width: 100%; }
+            .cta-box .btn { display: block; width: 100%; }
             .visa-meta { gap: 1rem; }
-            .btn-secondary { margin-left: 0; margin-top: 0.5rem; }
-            .cta-box .btn { display: block; width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-inner">
-            <a href="/" class="logo">
-                <div class="logo-icon">JG</div>
-                JapaGrid
-            </a>
-            <a href="/" class="back-link">← Back to home</a>
+            <a href="index.html" class="logo">Japa<span>Grid</span></a>
+            <a href="index.html" class="back-link">← Back</a>
         </div>
     </nav>
 
     <header class="country-header">
         <div class="breadcrumb">
-            <a href="/">Home</a>
-            <span>/</span>
-            <span>Europe</span>
-            <span>/</span>
-            <span style="color: var(--text);">Germany</span>
+            <a href="index.html">Home</a> / Europe / Germany
         </div>
         <div class="country-title">
             <span class="flag">🇩🇪</span>
             <h1>Germany</h1>
         </div>
         <p class="country-hook">
-            <strong>For skilled professionals with formal qualifications who value stability over speed.</strong> 
-            Germany actively recruits foreign talent, but the path is bureaucratic, language-dependent, and increasingly competitive for housing.
+            <strong>For skilled professionals with formal qualifications who value stability over speed.</strong> Germany actively recruits foreign talent, but the path is bureaucratic, language-dependent, and increasingly competitive for housing. I know this because I'm walking it myself.
         </p>
         <div class="meta-bar">
-            <span class="verified-badge">✓ Verified</span>
-            <div class="meta-item">
-                <span class="dot verified"></span>
-                <span>Last verified: 21 July 2026</span>
-            </div>
-            <div class="meta-item">
-                <span class="dot warning"></span>
-                <span>12 official sources</span>
-            </div>
+            <span class="verified-badge">Verified</span>
+            <span class="meta-item">Last checked 21 July 2026</span>
+            <span class="meta-item">12 official sources</span>
         </div>
     </header>
 
-    <div class="quick-stats">
-        <div class="stat-card">
-            <span class="stat-value">4+</span>
-            <span class="stat-label">Visa Pathways</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-value">€50k</span>
-            <span class="stat-label">Min. Salary</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-value">4 yrs</span>
-            <span class="stat-label">To Permanent Residency</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-value">B1</span>
-            <span class="stat-label">Language for PR</span>
-        </div>
-    </div>
-
     <main class="content">
         <section class="section">
-            <div class="section-header-row">
-                <span class="section-icon">🛂</span>
-                <h2>Visa Pathways</h2>
-                <span class="section-count">4 options</span>
-            </div>
+            <div class="section-label">Visa Pathways</div>
+            <h2>How to get in</h2>
+            <p class="section-intro">
+                Germany has four main routes for non-EU workers. The Skilled Worker Visa is the most direct for Nigerian graduates with recognized qualifications. The Opportunity Card is newer and more flexible but requires points. Choose based on what you have, not what you wish you had.
+            </p>
             <div class="visa-grid">
                 <div class="visa-card recommended">
-                    <span class="visa-badge">Best for Nigerians</span>
-                    <h3>Skilled Worker Visa (Fachkräfteeinwanderungsgesetz)</h3>
-                    <p>For people with a recognized vocational or university qualification and a concrete job offer in Germany. The most direct path for most Nigerian graduates.</p>
+                    <span class="visa-badge">Most direct</span>
+                    <h3>Skilled Worker Visa</h3>
+                    <p>For people with a recognized vocational or university qualification and a concrete job offer. This is the path I'm preparing for.</p>
                     <div class="visa-meta">
                         <div class="visa-meta-item">
-                            <span class="label">Processing Time</span>
+                            <span class="label">Processing</span>
                             <span class="value">6–12 weeks</span>
                         </div>
                         <div class="visa-meta-item">
-                            <span class="label">Job Required First?</span>
+                            <span class="label">Job first?</span>
                             <span class="value">Yes</span>
                         </div>
                         <div class="visa-meta-item">
                             <span class="label">Language</span>
-                            <span class="value">B1 German (usually)</span>
+                            <span class="value">B1 German</span>
                         </div>
                         <div class="visa-meta-item">
-                            <span class="label">Salary Threshold</span>
-                            <span class="value">€43,800+ (2026)</span>
+                            <span class="label">Salary floor</span>
+                            <span class="value">€43,800 (2026)</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="visa-card">
                     <h3>Job Seeker Visa</h3>
-                    <p>6-month visa to search for a job in Germany. No work allowed during the search period. Best for people with strong qualifications and savings.</p>
+                    <p>Six months to find a job. No work allowed during the search. You need savings, a recognized degree, and a tolerance for uncertainty.</p>
                     <div class="visa-meta">
                         <div class="visa-meta-item">
                             <span class="label">Duration</span>
                             <span class="value">6 months</span>
                         </div>
                         <div class="visa-meta-item">
-                            <span class="label">Proof of Funds</span>
-                            <span class="value">~€11,000 blocked account</span>
+                            <span class="label">Blocked account</span>
+                            <span class="value">~€11,000</span>
                         </div>
                         <div class="visa-meta-item">
-                            <span class="label">Degree Required</span>
-                            <span class="value">Yes, recognized</span>
+                            <span class="label">Degree</span>
+                            <span class="value">Recognized required</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="visa-card">
                     <h3>Opportunity Card (Chancenkarte)</h3>
-                    <p>Points-based system for job seekers. Launched June 2024. No job offer required, but you need points from qualifications, experience, language, and age.</p>
+                    <p>Points-based. No job offer needed. Part-time work allowed. Launched June 2024 — still new, still being figured out by applicants and officials alike.</p>
                     <div class="visa-meta">
                         <div class="visa-meta-item">
                             <span class="label">Duration</span>
-                            <span class="value">1 year (extendable)</span>
+                            <span class="value">1 year, extendable</span>
                         </div>
                         <div class="visa-meta-item">
-                            <span class="label">Part-time Work</span>
-                            <span class="value">Allowed (up to 20 hrs/week)</span>
+                            <span class="label">Part-time work</span>
+                            <span class="value">Up to 20 hrs/week</span>
                         </div>
                         <div class="visa-meta-item">
-                            <span class="label">Points Needed</span>
-                            <span class="value">6+ (out of possible criteria)</span>
+                            <span class="label">Points needed</span>
+                            <span class="value">6+</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="visa-card">
                     <h3>Student Visa → Work</h3>
-                    <p>Study at a German university, work part-time, transition to skilled worker visa after graduation. Longer path but builds network and language.</p>
+                    <p>Study first, work later. Longer path but you build language, network, and familiarity before you need to earn. This is my backup plan.</p>
                     <div class="visa-meta">
                         <div class="visa-meta-item">
-                            <span class="label">Blocked Account</span>
+                            <span class="label">Blocked account</span>
                             <span class="value">~€11,208/year</span>
                         </div>
                         <div class="visa-meta-item">
-                            <span class="label">Work During Study</span>
+                            <span class="label">Work during study</span>
                             <span class="value">120 full days/year</span>
                         </div>
                         <div class="visa-meta-item">
-                            <span class="label">Job Search Post-Grad</span>
+                            <span class="label">Job search post-grad</span>
                             <span class="value">18 months</span>
                         </div>
                     </div>
@@ -725,87 +664,59 @@
         </section>
 
         <section class="section">
-            <div class="section-header-row">
-                <span class="section-icon">💼</span>
-                <h2>Job Market Reality</h2>
-            </div>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">
-                Germany has a genuine labor shortage, but <strong>"shortage" does not mean "easy for everyone."</strong> 
-                Language requirements are real, and employers prefer candidates already in Germany.
+            <div class="section-label">Job Market</div>
+            <h2>Who Germany actually needs</h2>
+            <p class="section-intro">
+                Germany has a labor shortage. <strong>But "shortage" does not mean "easy for everyone."</strong> Language requirements are real. Employers prefer candidates already in Germany. And the shortage is sector-specific, not universal.
             </p>
-            <div class="job-highlights">
+            <div class="job-list">
                 <div class="job-item">
                     <span class="job-name">Software Engineering / IT</span>
-                    <span class="job-demand">
-                        <span>Very High</span>
-                        <span class="demand-bar"><span class="demand-fill high"></span></span>
-                    </span>
+                    <span class="job-status high">Very High Demand</span>
                 </div>
                 <div class="job-item">
                     <span class="job-name">Healthcare (Nursing, Caregiving)</span>
-                    <span class="job-demand">
-                        <span>Very High</span>
-                        <span class="demand-bar"><span class="demand-fill high"></span></span>
-                    </span>
+                    <span class="job-status high">Very High Demand</span>
                 </div>
                 <div class="job-item">
                     <span class="job-name">Engineering (Mechanical, Electrical)</span>
-                    <span class="job-demand">
-                        <span>High</span>
-                        <span class="demand-bar"><span class="demand-fill high"></span></span>
-                    </span>
+                    <span class="job-status high">High Demand</span>
                 </div>
                 <div class="job-item">
-                    <span class="job-name">Skilled Trades (Plumbing, Electrical)</span>
-                    <span class="job-demand">
-                        <span>High</span>
-                        <span class="demand-bar"><span class="demand-fill high"></span></span>
-                    </span>
+                    <span class="job-name">Skilled Trades</span>
+                    <span class="job-status high">High Demand</span>
                 </div>
                 <div class="job-item">
                     <span class="job-name">Data Science / AI</span>
-                    <span class="job-demand">
-                        <span>High</span>
-                        <span class="demand-bar"><span class="demand-fill high"></span></span>
-                    </span>
+                    <span class="job-status high">High Demand</span>
                 </div>
                 <div class="job-item">
                     <span class="job-name">Humanities / Social Sciences</span>
-                    <span class="job-demand">
-                        <span>Low</span>
-                        <span class="demand-bar"><span class="demand-fill low"></span></span>
-                    </span>
+                    <span class="job-status low">Low Demand</span>
                 </div>
             </div>
-            <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.5rem; margin-top: 1rem;">
-                <p style="font-size: 0.85rem; color: var(--text-muted);">
-                    <strong style="color: var(--warning);">⚠️ Reality check:</strong> 
-                    English-speaking jobs exist in tech, but <strong>most roles require B1–B2 German</strong>. 
-                    The "Germany needs workers" headline is true for specific sectors, not universal.
-                </p>
+            <div class="reality-box">
+                <p><strong>Reality check:</strong> English-speaking jobs exist in tech, but most roles require B1–B2 German. The "Germany needs workers" headline is true for specific sectors. If you're in humanities, this is not your easy path.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="section-header-row">
-                <span class="section-icon">💶</span>
-                <h2>Cost vs. Earnings</h2>
-            </div>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">
-                Based on a single person in a mid-sized German city (e.g., Stuttgart, Erlangen, Aachen). 
-                Munich/Berlin are significantly more expensive.
+            <div class="section-label">Money</div>
+            <h2>What you earn vs. what you keep</h2>
+            <p class="section-intro">
+                Based on a single person in a mid-sized city — Stuttgart, Erlangen, Aachen. Munich and Berlin are significantly more expensive. The numbers below are conservative. Plan for worse, hope for better.
             </p>
             <div class="cost-table">
                 <div class="cost-row">
-                    <span class="cost-label">Gross Salary (Engineer, mid-level)</span>
+                    <span class="cost-label">Gross salary (engineer, mid-level)</span>
                     <span class="cost-value">€55,000/year</span>
                 </div>
                 <div class="cost-row">
-                    <span class="cost-label">Income Tax + Social Security <span class="cost-note">~42% total deduction</span></span>
+                    <span class="cost-label">Tax + social security <span class="cost-note">~42% total</span></span>
                     <span class="cost-value" style="color: var(--danger);">−€23,100</span>
                 </div>
                 <div class="cost-row">
-                    <span class="cost-label">Net Income</span>
+                    <span class="cost-label">Net income</span>
                     <span class="cost-value" style="color: var(--success);">€31,900/year</span>
                 </div>
                 <div class="cost-row">
@@ -813,51 +724,44 @@
                     <span class="cost-value">−€800/month</span>
                 </div>
                 <div class="cost-row">
-                    <span class="cost-label">Health Insurance <span class="cost-note">Mandatory, employer covers half</span></span>
+                    <span class="cost-label">Health insurance <span class="cost-note">Mandatory, employer covers half</span></span>
                     <span class="cost-value">−€400/month</span>
                 </div>
                 <div class="cost-row">
-                    <span class="cost-label">Food & Groceries</span>
+                    <span class="cost-label">Food & groceries</span>
                     <span class="cost-value">−€300/month</span>
                 </div>
                 <div class="cost-row">
-                    <span class="cost-label">Transport (Public)</span>
+                    <span class="cost-label">Transport</span>
                     <span class="cost-value">−€80/month</span>
                 </div>
                 <div class="cost-row">
-                    <span class="cost-label">Utilities + Internet</span>
+                    <span class="cost-label">Utilities & internet</span>
                     <span class="cost-value">−€150/month</span>
                 </div>
                 <div class="cost-row total">
-                    <span class="cost-label" style="font-weight: 700;">Disposable Income (monthly)</span>
-                    <span class="cost-value" style="color: var(--accent); font-size: 1.1rem;">~€800–€1,000</span>
+                    <span class="cost-label" style="font-weight: 700;">Disposable income (monthly)</span>
+                    <span class="cost-value" style="color: var(--accent); font-size: 1.05rem;">~€800–€1,000</span>
                 </div>
             </div>
-            <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.5rem; margin-top: 1rem;">
-                <p style="font-size: 0.85rem; color: var(--text-muted);">
-                    <strong style="color: var(--info);">ℹ️ Note:</strong> 
-                    This is a conservative estimate. Actual disposable income varies by city, lifestyle, and family status. 
-                    Munich can eat €1,200+/month in rent alone.
-                </p>
+            <div class="reality-box">
+                <p><strong>Note:</strong> Munich rent alone can exceed €1,200. These numbers assume you're not in a major city. Adjust accordingly.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="section-header-row">
-                <span class="section-icon">🎓</span>
-                <h2>Qualification Recognition</h2>
-            </div>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">
-                <strong>This is where most Nigerians get stuck.</strong> Your degree is not automatically valid in Germany. 
-                You must get it recognized — and the process varies wildly by profession and federal state.
+            <div class="section-label">Qualifications</div>
+            <h2>Will your degree count?</h2>
+            <p class="section-intro">
+                <strong>This is where most Nigerians get stuck.</strong> Your degree is not automatically valid. You must get it recognized, and the process varies by profession and federal state. Start this before you apply for jobs.
             </p>
             <div class="visa-grid">
                 <div class="visa-card">
                     <h3>University Degrees</h3>
-                    <p>Handled by <strong>anabin</strong> database. Check if your Nigerian university and degree are listed as "H+" (equivalent) or "H−" (not equivalent). If H−, you may need additional coursework or exams.</p>
+                    <p>Check the <strong>anabin</strong> database. Your Nigerian university and degree need an "H+" rating. If it's "H−", you may need additional coursework.</p>
                     <div class="visa-meta">
                         <div class="visa-meta-item">
-                            <span class="label">Where to Check</span>
+                            <span class="label">Check at</span>
                             <span class="value">anabin.kmk.org</span>
                         </div>
                         <div class="visa-meta-item">
@@ -872,11 +776,11 @@
                 </div>
                 <div class="visa-card">
                     <h3>Vocational / Trade Qualifications</h3>
-                    <p>Handled by the <strong> chambers of commerce (IHK/HWK)</strong> in each state. Recognition is patchy — some trades have streamlined processes, others require retraining in Germany.</p>
+                    <p>Handled by state chambers of commerce (IHK/HWK). Recognition is patchy. Some trades have streamlined processes; others require retraining in Germany.</p>
                     <div class="visa-meta">
                         <div class="visa-meta-item">
-                            <span class="label">Where to Apply</span>
-                            <span class="value">State-specific IHK/HWK</span>
+                            <span class="label">Apply to</span>
+                            <span class="value">State IHK/HWK</span>
                         </div>
                         <div class="visa-meta-item">
                             <span class="label">Cost</span>
@@ -889,202 +793,176 @@
                     </div>
                 </div>
             </div>
-            <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem 1.5rem; margin-top: 1rem;">
-                <p style="font-size: 0.85rem; color: var(--text-muted);">
-                    <strong style="color: var(--warning);">⚠️ Critical:</strong> 
-                    Start recognition <strong>before</strong> you apply for jobs. Many employers won't consider you without it. 
-                    The "Make it in Germany" portal has a free pre-check tool.
-                </p>
+            <div class="reality-box">
+                <p><strong>Critical:</strong> Many employers won't consider you without recognition. The "Make it in Germany" portal has a free pre-check tool. Use it.</p>
             </div>
         </section>
 
         <section class="section">
-            <div class="section-header-row">
-                <span class="section-icon">🏠</span>
-                <h2>Lifestyle & Integration</h2>
-            </div>
-            <div class="job-highlights">
+            <div class="section-label">Living There</div>
+            <h2>What integration actually means</h2>
+            <p class="section-intro">
+                Germany is not a melting pot. Integration is formalized — language courses, civic tests, bureaucracy. The system works if you engage with it. Passive English-speaking expat life is limited.
+            </p>
+            <div class="job-list">
                 <div class="job-item">
-                    <span class="job-name">Healthcare Quality</span>
-                    <span class="job-demand">
-                        <span style="color: var(--success); font-weight: 600;">Excellent</span>
-                    </span>
+                    <span class="job-name">Healthcare</span>
+                    <span class="job-status high">Excellent</span>
                 </div>
                 <div class="job-item">
-                    <span class="job-name">Public Transport</span>
-                    <span class="job-demand">
-                        <span style="color: var(--success); font-weight: 600;">Reliable</span>
-                    </span>
+                    <span class="job-name">Public transport</span>
+                    <span class="job-status high">Reliable</span>
                 </div>
                 <div class="job-item">
-                    <span class="job-name">Nigerian Community</span>
-                    <span class="job-demand">
-                        <span style="color: var(--warning); font-weight: 600;">Growing (Berlin, Hamburg)</span>
-                    </span>
+                    <span class="job-name">Nigerian community</span>
+                    <span class="job-status medium">Growing (Berlin, Hamburg)</span>
                 </div>
                 <div class="job-item">
-                    <span class="job-name">Social Acceptance</span>
-                    <span class="job-demand">
-                        <span style="color: var(--warning); font-weight: 600;">Varies by region</span>
-                    </span>
+                    <span class="job-name">Social acceptance</span>
+                    <span class="job-status medium">Varies by region</span>
                 </div>
                 <div class="job-item">
                     <span class="job-name">Weather</span>
-                    <span class="job-demand">
-                        <span style="color: var(--text-muted); font-weight: 600;">Cold, grey winters</span>
-                    </span>
+                    <span class="job-status low">Cold, grey winters</span>
                 </div>
                 <div class="job-item">
                     <span class="job-name">Bureaucracy</span>
-                    <span class="job-demand">
-                        <span style="color: var(--danger); font-weight: 600;">Extensive</span>
-                    </span>
+                    <span class="job-status low">Extensive</span>
                 </div>
-            </div>
-            <div style="margin-top: 1.5rem; padding: 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;">
-                <h4 style="font-size: 1rem; margin-bottom: 0.75rem;">The Integration Reality</h4>
-                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7;">
-                    Germany is not a "melting pot." Integration is formalized — language courses (B1 required for PR), 
-                    integration courses, and civic knowledge tests. The system works if you engage with it, but 
-                    <strong>passive English-speaking expat life is limited</strong>. You will need German for banking, 
-                    housing, healthcare, and deep social connection. Start learning before you arrive.
-                </p>
             </div>
         </section>
 
         <section class="section">
-            <div class="section-header-row">
-                <span class="section-icon">⚠️</span>
-                <h2>The Catch</h2>
-            </div>
+            <div class="section-label">The Truth</div>
             <div class="catch-box">
+                <span class="catch-label">Read This</span>
                 <h3>What no one puts in the headline</h3>
                 <ul>
                     <li><strong>Housing crisis is real.</strong> In major cities, finding an apartment takes months. Landlords demand SCHUFA (credit score you don't have), high deposits, and German-speaking references. Start searching before you arrive.</li>
-                    <li><strong>Taxes are high.</strong> That €55k salary becomes ~€32k net. Factor this into your planning. "High salary" in Germany is not what it sounds like pre-tax.</li>
+                    <li><strong>Taxes are high.</strong> That €55k salary becomes ~€32k net. "High salary" in Germany is not what it sounds like pre-tax.</li>
                     <li><strong>Bureaucracy is a lifestyle.</strong> Registration, tax ID, health insurance, bank account — each requires appointments, documents, and patience. The system works, but it moves at its own pace.</li>
-                    <li><strong>Language is non-negotiable for integration.</strong> You can survive in English in tech. You cannot thrive. B1 is the floor, not the ceiling.</li>
+                    <li><strong>Language is non-negotiable.</strong> You can survive in English in tech. You cannot thrive. B1 is the floor, not the ceiling. Start learning before you arrive.</li>
                     <li><strong>Degree recognition is a gatekeeper.</strong> Many Nigerian engineering degrees are recognized, but the process is slow and state-dependent. Don't assume your qualification transfers cleanly.</li>
                 </ul>
             </div>
         </section>
 
         <section class="section">
-            <div class="section-header-row">
-                <span class="section-icon">🔗</span>
-                <h2>Verified Sources</h2>
-                <span class="section-count">12 links</span>
-            </div>
+            <div class="section-label">Sources</div>
+            <h2>Where this data comes from</h2>
+            <p class="section-intro">
+                Every claim above is traceable to one of these sources. If you find a broken link or outdated information, tell me. I'll verify and update.
+            </p>
             <div class="sources-list">
                 <div class="source-item">
-                    <span>Make it in Germany — Official portal for skilled workers</span>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <span class="source-name">Make it in Germany — Official portal</span>
+                    <div class="source-right">
                         <span class="source-type">Government</span>
-                        <a href="https://www.make-it-in-germany.com" target="_blank">make-it-in-germany.com ↗</a>
+                        <a href="https://www.make-it-in-germany.com" target="_blank">Visit ↗</a>
                     </div>
                 </div>
                 <div class="source-item">
-                    <span>Federal Foreign Office — Visa requirements</span>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <span class="source-name">Federal Foreign Office — Visa requirements</span>
+                    <div class="source-right">
                         <span class="source-type">Government</span>
-                        <a href="https://www.auswaertiges-amt.de" target="_blank">auswaertiges-amt.de ↗</a>
+                        <a href="https://www.auswaertiges-amt.de" target="_blank">Visit ↗</a>
                     </div>
                 </div>
                 <div class="source-item">
-                    <span>BAMF — Federal Office for Migration and Refugees</span>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <span class="source-name">BAMF — Migration and Refugees</span>
+                    <div class="source-right">
                         <span class="source-type">Government</span>
-                        <a href="https://www.bamf.de" target="_blank">bamf.de ↗</a>
+                        <a href="https://www.bamf.de" target="_blank">Visit ↗</a>
                     </div>
                 </div>
                 <div class="source-item">
-                    <span>Anabin — University degree recognition database</span>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <span class="source-name">Anabin — Degree recognition database</span>
+                    <div class="source-right">
                         <span class="source-type">Database</span>
-                        <a href="https://anabin.kmk.org" target="_blank">anabin.kmk.org ↗</a>
+                        <a href="https://anabin.kmk.org" target="_blank">Visit ↗</a>
                     </div>
                 </div>
                 <div class="source-item">
-                    <span>Destatis — Federal Statistical Office (salary data)</span>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <span class="source-name">Destatis — Federal Statistics</span>
+                    <div class="source-right">
                         <span class="source-type">Statistics</span>
-                        <a href="https://www.destatis.de" target="_blank">destatis.de ↗</a>
+                        <a href="https://www.destatis.de" target="_blank">Visit ↗</a>
                     </div>
                 </div>
                 <div class="source-item">
-                    <span>BA (Bundesagentur für Arbeit) — Job market data</span>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <span class="source-name">Bundesagentur für Arbeit — Job market</span>
+                    <div class="source-right">
                         <span class="source-type">Government</span>
-                        <a href="https://www.arbeitsagentur.de" target="_blank">arbeitsagentur.de ↗</a>
+                        <a href="https://www.arbeitsagentur.de" target="_blank">Visit ↗</a>
                     </div>
                 </div>
                 <div class="source-item">
-                    <span>Skilled Immigration Act 2024 (Fachkräfteeinwanderungsgesetz)</span>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <span class="source-name">Skilled Immigration Act 2024</span>
+                    <div class="source-right">
                         <span class="source-type">Legislation</span>
-                        <a href="https://www.bmi.bund.de" target="_blank">bmi.bund.de ↗</a>
+                        <a href="https://www.bmi.bund.de" target="_blank">Visit ↗</a>
                     </div>
                 </div>
                 <div class="source-item">
-                    <span>Opportunity Card (Chancenkarte) requirements</span>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <span class="source-name">Opportunity Card requirements</span>
+                    <div class="source-right">
                         <span class="source-type">Government</span>
-                        <a href="https://www.make-it-in-germany.com/en/visa/kinds-of-visa/opportunity-card/" target="_blank">make-it-in-germany.com ↗</a>
+                        <a href="https://www.make-it-in-germany.com/en/visa/kinds-of-visa/opportunity-card/" target="_blank">Visit ↗</a>
                     </div>
                 </div>
                 <div class="source-item">
-                    <span>DAAD — Scholarship and study info</span>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <span class="source-name">DAAD — Scholarships and study</span>
+                    <div class="source-right">
                         <span class="source-type">Organization</span>
-                        <a href="https://www.daad.de" target="_blank">daad.de ↗</a>
+                        <a href="https://www.daad.de" target="_blank">Visit ↗</a>
                     </div>
                 </div>
                 <div class="source-item">
-                    <span>Numbeo — Cost of living comparisons</span>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <span class="source-name">Numbeo — Cost of living</span>
+                    <div class="source-right">
                         <span class="source-type">Data</span>
-                        <a href="https://www.numbeo.com" target="_blank">numbeo.com ↗</a>
+                        <a href="https://www.numbeo.com" target="_blank">Visit ↗</a>
                     </div>
                 </div>
                 <div class="source-item">
-                    <span>OECD Migration Outlook 2026</span>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <span class="source-name">OECD Migration Outlook</span>
+                    <div class="source-right">
                         <span class="source-type">Report</span>
-                        <a href="https://www.oecd.org" target="_blank">oecd.org ↗</a>
+                        <a href="https://www.oecd.org" target="_blank">Visit ↗</a>
                     </div>
                 </div>
                 <div class="source-item">
-                    <span>DeutschReady — A1 exam prep (affiliated)</span>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
-                        <span class="source-type">Product</span>
-                        <a href="https://deutschready.xyz" target="_blank">deutschready.xyz ↗</a>
+                    <span class="source-name">DeutschReady — A1 exam prep</span>
+                    <div class="source-right">
+                        <span class="source-type">Affiliated</span>
+                        <a href="https://deutschready.xyz" target="_blank">Visit ↗</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <div class="cta-box">
-            <h3>Preparing for Germany? Start with the language.</h3>
-            <p>Most visa pathways and jobs require at least A1–B1 German. DeutschReady is built specifically for Nigerians prepping for the TELC/Goethe A1 exam.</p>
-            <div>
-                <a href="https://deutschready.xyz" target="_blank" class="btn btn-primary">
-                    Visit DeutschReady ↗
-                </a>
-                <a href="/" class="btn btn-secondary">Explore more countries</a>
-            </div>
+            <h3>Preparing for Germany?</h3>
+            <p>Most visa pathways require at least A1 German. DeutschReady is built for Nigerians prepping for the TELC/Goethe A1 exam — the same exam I'm studying for.</p>
+            <a href="https://deutschready.xyz" target="_blank" class="btn btn-primary">Visit DeutschReady ↗</a>
+            <a href="index.html" class="btn btn-secondary">Back to home</a>
         </div>
     </main>
 
     <footer>
         <div class="footer-inner">
-            <a href="/" class="footer-brand">
-                <div class="logo-icon">JG</div>
-                JapaGrid
-            </a>
-            <p class="footer-note">All data verified against official sources. Last updated: 21 July 2026.</p>
-            <p class="studio-badge">
-                ◆ A <span>Louis IV Studio</span> project
+            <a href="index.html" class="footer-brand">Japa<span>Grid</span></a>
+            <p class="footer-note">
+                All data verified against official sources where possible.<br>
+                Last updated: 21 July 2026.
             </p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="https://deutschready.xyz" target="_blank">DeutschReady</a>
+                <a href="https://instagram.com/louis_nkan" target="_blank">Instagram</a>
+                <a href="https://github.com/louisnkan" target="_blank">GitHub</a>
+            </div>
+            <p class="studio-line">◆ A <span>Louis IV Studio</span> project</p>
         </div>
     </footer>
 </body>

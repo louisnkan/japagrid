@@ -316,6 +316,45 @@
             opacity: 0.9;
         }
 
+        /* CTA Box */
+        .cta-box {
+            background: rgba(212, 160, 23, 0.08);
+            border: 1px solid rgba(212, 160, 23, 0.2);
+            padding: 28px;
+            border-radius: 8px;
+            margin-top: 32px;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .cta-box p {
+            font-size: 15px;
+            color: var(--cream-muted);
+            margin-bottom: 16px;
+        }
+
+        .cta-box a {
+            display: inline-block;
+            background: var(--amber);
+            color: var(--charcoal);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: opacity 0.2s ease;
+        }
+
+        .cta-box a:hover {
+            opacity: 0.9;
+        }
+
         /* Sources */
         .sources-list {
             list-style: none;
@@ -374,7 +413,7 @@
                 gap: 8px;
             }
 
-            .catch-box {
+            .catch-box, .cta-box {
                 padding: 24px;
             }
         }
@@ -653,6 +692,17 @@
                     </div>
                 </div>
             </div>
+
+            <div class="reality-box note">
+                <div class="reality-label">Personal Note</div>
+                <p>
+                    I have not gone through Canadian credential recognition myself — my focus is Germany. 
+                    What I have written here comes from hours reading PEO and APEGA documentation, 
+                    Engineers Canada guidelines, and conversations with Nigerian engineers in Toronto. 
+                    Verify everything with the provincial regulator directly. Do not trust a blog post, 
+                    including this one, for licensing decisions.
+                </p>
+            </div>
         </section>
 
         <!-- THE CATCH -->
@@ -668,9 +718,10 @@
                 <p>
                     The post-2024 policy changes have stripped away the shortcuts. Express Entry scores are punishing 
                     without a category draw or PNP. The study permit cap means competition for limited spots. 
-                    Housing in the cities where the jobs are is a genuine crisis. Credential recognition is a 
-                    multi-year project, not a formality. And the winters — the ones people joke about — are 
-                    physically and mentally real, especially for newcomers from tropical climates.
+                    Housing in the cities where the jobs are is a genuine crisis — $2,800 CAD for a one-bedroom 
+                    is not a worst-case scenario, it is the market. Credential recognition is a multi-year project, 
+                    not a formality. And the winters — the ones people joke about — are physically and mentally 
+                    real, especially for newcomers from tropical climates.
                 </p>
                 <p style="margin-top: 12px;">
                     Canada still works. People still arrive, build lives, and thrive. But the path is narrower, 
@@ -690,6 +741,15 @@
             </div>
         </section>
 
+        <!-- CTA -->
+        <section class="section">
+            <div class="cta-box">
+                <h3>Not sure Canada is the right fit?</h3>
+                <p>Compare pathways, costs, and timelines across countries. Start with what we've built so far.</p>
+                <a href="index.html">Explore All Countries</a>
+            </div>
+        </section>
+
         <!-- SOURCES -->
         <section class="section">
             <div class="section-label">Verification</div>
@@ -699,13 +759,18 @@
             </p>
 
             <ul class="sources-list">
-                <li><a href="https://www.canada.ca/immigration" target="_blank" rel="noopener">IRCC — Immigration, Refugees and Citizenship Canada (canada.ca/immigration)</a></li>
-                <li><a href="https://www.cic.gc.ca" target="_blank" rel="noopener">Express Entry draw history (cic.gc.ca)</a></li>
-                <li><a href="https://www.jobbank.gc.ca" target="_blank" rel="noopener">Job Bank — Official Canadian labour market data (jobbank.gc.ca)</a></li>
-                <li><a href="https://www.numbeo.com" target="_blank" rel="noopener">Numbeo — Cost of living comparisons (numbeo.com)</a></li>
-                <li><a href="https://www.ontario.ca/oinp" target="_blank" rel="noopener">Ontario Immigrant Nominee Program (ontario.ca/oinp)</a></li>
-                <li><a href="https://www.alberta.ca/aaip" target="_blank" rel="noopener">Alberta Advantage Immigration Program (alberta.ca/aaip)</a></li>
-                <li><a href="https://www.engineerscanada.ca" target="_blank" rel="noopener">Engineers Canada — Professional licensing (engineerscanada.ca)</a></li>
+                <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship.html" target="_blank" rel="noopener">IRCC — Immigration, Refugees and Citizenship Canada (canada.ca)</a></li>
+                <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html" target="_blank" rel="noopener">Express Entry — Official Program Overview (canada.ca)</a></li>
+                <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile/rounds-invitations.html" target="_blank" rel="noopener">Express Entry Draw History — IRCC (canada.ca)</a></li>
+                <li><a href="https://www.jobbank.gc.ca/home" target="_blank" rel="noopener">Job Bank — Official Canadian Labour Market Data (jobbank.gc.ca)</a></li>
+                <li><a href="https://www.numbeo.com/cost-of-living/" target="_blank" rel="noopener">Numbeo — Cost of Living Comparisons (numbeo.com)</a></li>
+                <li><a href="https://www.ontario.ca/page/oinp-ontario-immigrant-nominee-program" target="_blank" rel="noopener">Ontario Immigrant Nominee Program (ontario.ca)</a></li>
+                <li><a href="https://www.alberta.ca/alberta-advantage-immigration-program" target="_blank" rel="noopener">Alberta Advantage Immigration Program (alberta.ca)</a></li>
+                <li><a href="https://www.welcomebc.ca/Immigrate-to-B-C/B-C-Provincial-Nominee-Program" target="_blank" rel="noopener">British Columbia Provincial Nominee Program (welcomebc.ca)</a></li>
+                <li><a href="https://www.engineerscanada.ca/" target="_blank" rel="noopener">Engineers Canada — National Professional Licensing (engineerscanada.ca)</a></li>
+                <li><a href="https://www.peo.on.ca/" target="_blank" rel="noopener">Professional Engineers Ontario — PEO (peo.on.ca)</a></li>
+                <li><a href="https://www.egbc.ca/" target="_blank" rel="noopener">Engineers and Geoscientists BC (egbc.ca)</a></li>
+                <li><a href="https://www.apega.ca/" target="_blank" rel="noopener">Association of Professional Engineers and Geoscientists of Alberta (apega.ca)</a></li>
             </ul>
         </section>
 
